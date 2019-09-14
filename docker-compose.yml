@@ -1,9 +1,8 @@
 version: '3'
 services:
-  openresty:
-    image:  openresty/openresty:alpine-fat
+  lapis:
+    build: .
     volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./src:/code
+      - .:/app
     ports:
       - 8868:8080
